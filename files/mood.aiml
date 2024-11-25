@@ -1,0 +1,41 @@
+<aiml version="2.0">
+	
+	 <!-- movie-based Recommendation -->
+    <category>
+        <pattern>^ <set>moods</set> ^</pattern>
+        <template>
+            <delay>1</delay>
+            <think>
+                <set name="mood"><star index='2'/></set>
+                <set name="topic">random</set>
+                <set name="currentTopic">random</set>
+            </think>
+            <random>
+                <li>
+                    So, you are <get name="mood"/>.<br/>
+                    May I suggest a <set name="temp"><map name="mood2genre"><get name="mood"/></map></set> movie then.<br/>
+                    Here is a movie with that genre: <set name="temp"><map name="genre2movie"><get name="temp"/></map></set>.<br/>
+                    <think><set name="temp"><map name="movie2actor"><get name="temp"/></map></set></think>
+                    This movie is starring the actor: <get name="temp"/>.
+                </li>
+                <li>
+                    Ah, so you’re feeling <get name="mood"/>.<br/>
+                    How about watching a <set name="temp"><map name="mood2genre"><get name="mood"/></map></set> movie?<br/>
+                    Here's a recommendation for you: <set name="temp"><map name="genre2movie"><get name="temp"/></map></set>.<br/>
+                    <think><set name="temp"><map name="movie2actor"><get name="temp"/></map></set></think>
+                    The lead actor in this movie is: <get name="temp"/>.
+                </li>
+            </random><br/>
+            Can I make another recommandation, random this time?
+        </template>
+    </category>
+    
+    <category>
+        <pattern>^ mood ^</pattern>
+        <template>
+            <delay>1</delay>
+            What mood are you in?
+        </template>
+    </category>
+    
+</aiml>

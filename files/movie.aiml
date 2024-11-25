@@ -1,0 +1,128 @@
+<aiml version="2.0">
+    
+    <!-- movie-based Recommendation -->
+    <category>
+        <pattern>^ <set>movies</set> ^</pattern>
+        <template>
+            <think>
+                <set name="movie"><star index='2'/></set>
+                <set name="topic">movie</set>
+                <set name="currentTopic">movie</set>
+            </think>
+            <delay>1</delay>
+            <random>
+                <li>
+                    Ah, <get name="movie"/> is a good movie.<br/>
+                    The lead actor of this movie is <map name="movie2actor"><get name="movie"/></map>.<br/>
+                    <think><set name="temp"><map name="movie2genre"><get name="movie"/></map></set></think>
+                    <condition name="temp">
+                        <li value="unknown">I don't seem to recall what genre of movie it is unfortunately.</li>
+                        <li>Here is a film with the same genre: <map name="genre2movie"><get name="temp"/></map>.</li>
+                    </condition>
+                </li>
+                <li>
+                    Great choice, <get name="movie"/> is a beautiful movie.<br/>
+                    I believe the lead actor to be <map name="movie2actor"><get name="movie"/></map>.<br/>
+                    <think><set name="temp"><map name="movie2genre"><get name="movie"/></map></set></think>
+                    <condition name="temp">
+                        <li value="unknown">But I don't recall in what genre the movie could be categorized in.</li>
+                        <li>I found another movie of the same genre: <map name="genre2movie"><get name="temp"/></map>.</li>
+                    </condition>
+                </li>
+                <li>
+                    Oh, <get name="movie"/> is a fantastic movie.<br/>
+                    The main actor in this movie is <map name="movie2actor"><get name="movie"/></map>.<br/>
+                    <think><set name="temp"><map name="movie2genre"><get name="movie"/></map></set></think>
+                    <condition name="temp">
+                        <li value="unknown">I can’t quite remember the genre of this movie.</li>
+                        <li>Here's another movie of the same genre: <map name="genre2movie"><get name="temp"/></map>.</li>
+                    </condition>
+                </li>
+                <li>
+                    Nice pick, <get name="movie"/> is an amazing movie.<br/>
+                    I believe the lead actor is <map name="movie2actor"><get name="movie"/></map>.<br/>
+                    <think><set name="temp"><map name="movie2genre"><get name="movie"/></map></set></think>
+                    <condition name="temp">
+                        <li value="unknown">Though I can't quite place the genre of this movie.</li>
+                        <li>Here’s another great movie in the same genre: <map name="genre2movie"><get name="temp"/></map>.</li>
+                    </condition>
+                </li>
+            </random><br/>
+            Do you like any other movies?
+        </template>
+    </category>
+    
+    <category>
+        <pattern>^ movie ^</pattern>
+        <template>
+            <delay>1</delay>
+            <think>
+                <set name="topic">movie</set>
+                <set name="currentTopic">movie</set>
+            </think>
+            What movie are you thinking about?
+        </template>
+    </category>
+    
+    <category>
+        <pattern>^ movies ^</pattern>
+        <template>
+            <srai>MOVIE</srai>
+        </template>
+    </category>
+    
+    
+    <topic name="movie">
+    <category>
+        <pattern>^ NOT KNOW ^</pattern>
+        <delay>1</delay>
+        <template>
+            <random>
+                <li>I'm sorry to hear that. Would you like me to give a random recommendation instead?</li>
+                <li>Sorry, that didn't help either. Can I recommend a random movie instead then?</li>
+                <li>That is unfortunate. Can I make a random recommendation for you instead?</li>
+            </random>
+            <think>
+                <set name="topic">random</set>
+                <set name="currentTopic">movie</set>
+            </think>
+        </template>
+    </category>
+    
+    <category>
+        <pattern>^ <set>no</set> ^</pattern>
+        <that>DO YOU LIKE ANY OTHER MOVIES</that>
+        <template>
+            <delay>1</delay>
+            <random>
+                <li>Oke. Would you like me to give a random recommendation?</li>
+                <li>Understood. Can I recommend a random movie instead then?</li>
+                <li>Oke. Can I make a random recommendation for you instead?</li>
+            </random>
+            <think>
+                <set name="topic">random</set>
+                <set name="currentTopic">unknown</set>
+            </think>
+        </template>
+    </category>
+    
+    <category>
+        <pattern>^ <set>no</set> ^</pattern>
+        <template>
+            <srai>I DO NOT KNOW ANY</srai>
+        </template>
+    </category>
+    
+    <category>
+        <pattern>^ <set>yes</set> ^</pattern>
+        <template>
+            <delay>1</delay>
+            <random>
+                <li>Great. What movie did you have in mind?</li>
+                <li>Fantastic. Which one do you have in mind?</li>
+            </random> 
+        </template>
+    </category>
+    </topic>
+    
+</aiml>

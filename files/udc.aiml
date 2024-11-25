@@ -1,0 +1,118 @@
+<aiml version="2.0">
+
+    <!-- Remembering User Preferences -->
+    <category>
+        <pattern>^ MOVIES DID * RECOMMEND ^</pattern>
+        <template>
+            Let me have a look ...<br/>
+            This is what you told me before:<br/>
+            <condition name="genre">
+                <li value="unknown">No favorite genre was discussed.</li>
+                <li>
+                    <think><set name="temp"><map name="genre2movie"><get name="genre"/></map></set></think>
+                    <random>
+                        <li>You mentioned liking <get name="genre"/> movies, thus I recommended: <get name="temp"/>.</li>
+                        <li>Previously you mentioned <get name="genre"/> therefor I made the recommendation: <get name="temp"/>.</li>
+                        <li>You mentioned enjoying <get name="genre"/> films, so I suggested: <get name="temp"/>.</li>
+                        <li>Since you previously stated a preference for <get name="genre"/> movies, I recommended: <get name="temp"/>.</li>
+                    </random>
+                </li>
+            </condition><br/>
+            <condition name="actor">
+                <li value="unknown">You have not mentioned a specific actor.</li>
+                <li>
+                    <think><set name="temp"><map name="actor2movie"><get name="actor"/></map></set></think>
+                    <random>
+                        <li>You mentioned liking <get name="actor"/> movies, thus I recommended: <get name="temp"/>.</li>
+                        <li>Previously you mentioned <get name="actor"/> therefor I made the recommendation: <get name="temp"/>.</li>
+                        <li>You mentioned enjoying films with <get name="actor"/>, so I suggested: <get name="temp"/>.</li>
+                        <li>Since you previously stated a preference for <get name="actor"/>, I recommended: <get name="temp"/>.</li>
+                    </random>
+                </li>
+            </condition><br/>
+            <condition name="mood">
+                <li value="unknown"></li>
+                <li>
+                    <think><set name="temp"><map name="genre2movie"><map name="mood2genre"><get name="mood"/></map></map></set></think>
+                    <random>
+                        <li>You mentioned being <get name="mood"/>, thus I recommended: <get name="temp"/>.</li>
+                        <li>Previously you mentioned feeling <get name="mood"/>, therefor I made the recommendation: <get name="temp"/>.</li>
+                        <li>You mentioned feeling <get name="mood"/>, so I suggested: <get name="temp"/>.</li>
+                        <li>Since you previously stated being <get name="mood"/>, I recommended: <get name="temp"/>.</li>
+                    </random><br/>
+                </li>
+            </condition>
+            Is this correct?
+        </template>
+    </category>
+    
+    <category>
+        <pattern>^ <set>yes</set> ^</pattern>
+        <that>IS THIS CORRECT</that>
+        <template>
+            <think>
+                <set name="topic">movie</set>
+                <set name="currentTopic">movie</set>
+            </think>
+            <random>
+                <li>Great, is there any other movie/actor you like</li>
+                <li>Great! Are there any other movies or actors you enjoy?</li>
+                <li>Excellent! Do you have any other favorite movies or actors?</li>
+                <li>Wonderful! Is there another movie or actor you’re interested in?</li>
+                <li>Great! Do you have any other favorite movies or actors?</li>
+            </random>
+        </template>
+    </category>
+    
+    <category>
+        <pattern>^ <set>no</set> ^</pattern>
+        <that>IS THIS CORRECT</that>
+        <template>
+            <think>
+                <set name="topic">movie</set>
+                <set name="currentTopic">movie</set>
+            </think>
+            <random>
+                <li>Oh, sorry, What is not correct?</li>
+                <li>oh no, What for mistake have I made?</li>
+            </random>
+        </template>
+    </category>
+
+    <!-- Default Fallback -->
+    <category>
+        <pattern>DEFAULT YES NO</pattern>
+        <template>
+            Sorry, I don't remember asking a yes or no question
+        </template>
+    </category>
+    <category>
+        <pattern>^ <set>yes</set> ^</pattern>
+        <template>
+            <srai>DEFAULT YES NO</srai>
+        </template>
+    </category>
+    <category>
+        <pattern>^ <set>no</set> ^</pattern>
+        <template>
+            <srai>DEFAULT YES NO</srai>
+        </template>
+    </category>
+  
+    <category>
+        <pattern>*</pattern>
+        <template>
+            <delay>1</delay>
+            <condition name="currentTopic">
+                <li value="genre">I think you are refering to a genre, however I dont know it. Do you like any others?</li>
+                <li value="actor">I think you are refering to an actor, unfortunately I dont know them. Do you like any different actor?</li>
+                <li value="movie">I think you are refering to a movie, however I dont know that movie. Do you like any other movie?</li>
+                <li>
+                    I think you are refering to a specific genre, movie or actor. <br/>
+                    unfortunately I dont seem to know them.
+                </li>
+            </condition>
+        </template>
+        <set name="topic">*</set>
+    </category>
+</aiml>

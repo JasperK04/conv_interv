@@ -1,0 +1,85 @@
+<aiml version="2.0">
+    
+    <category>
+        <pattern>^ <set>genres</set> ^</pattern>
+        <template>
+            <think>
+                <set name="genre"><star index='2'/></set>
+                <set name="topic">genre</set>
+                <set name="currentTopic">genre</set>
+            </think>
+            <delay>1</delay>
+            Great choice! Here is a <get name="genre"/> movie I recommend:<br/>
+            <set name="movie"><map name="genre2movie"><get name="genre"/></map></set>,<br/>
+            starring <map name="movie2actor"><get name="movie"/></map>.<br/>
+            Would you like a suggestion from a different genre?
+        </template>
+    </category>
+    
+    <category>
+        <pattern>^ genre ^</pattern>
+        <template>
+            <delay>1</delay>
+            <think>
+                <set name="topic">genre</set>
+                <set name="currentTopic">genre</set>
+            </think>
+            What genre are you thinking about?
+        </template>
+    </category>
+    
+
+    <topic name="genre">
+    <category>
+        <pattern>^ <set>no</set> ^</pattern>
+        <template>
+            <delay>1</delay>
+            <random>
+                <li>Oke. Do you maybe have a favorite actor?</li>
+                <li>Understood. Do you also like any specific actor?</li>
+                <li>Oke. Do you like any actor perhaps?</li>
+            </random>
+            <think>
+                <set name="topic">actor</set>
+                <set name="currentTopic">actor</set>
+            </think>
+        </template>
+    </category>
+    
+    <category>
+        <pattern>^ <set>yes</set> ^</pattern>
+        <that>WOULD YOU LIKE A SUGGESTION FROM A DIFFERENT GENRE</that>
+        <template>
+            <delay>1</delay>
+            <random>
+                <li>Great. What kind of genre did you have in mind?</li>
+                <li>Fantastic. What do you have in mind?</li>
+            </random>
+        </template>
+    </category>
+    
+    <category>
+        <pattern>* DO NOT HAVE *</pattern>
+        <template>
+            <delay>1</delay>
+            <random>
+                <li>I'm sorry to hear that, Do you have a favorite actor then?</li>
+                <li>Sorry, that didn't help. Do you like any specific actor then?</li>
+                <li>That is unfortunate, Do you like any actor perhaps?</li>
+            </random>
+            <think>
+                <set name="topic">actor</set>
+                <set name="currentTopic">actor</set>
+            </think>
+        </template>
+    </category>
+    
+    <category>
+        <pattern>^ NONE ^</pattern>
+        <template>
+            <srai>I DO NOT HAVE ANY</srai>
+        </template>
+    </category>
+    </topic>
+
+</aiml>

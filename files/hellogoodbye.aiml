@@ -1,0 +1,101 @@
+<aiml version="2.0">
+	
+	<!-- Greetings -->
+    <category>
+        <pattern>HELLO ^</pattern>
+        <template>
+            <delay>1</delay>
+            <random>
+                <li>Hello! I’m Popcorn, your personal movie guide. What genre or movie do you like?</li>
+                <li>HI, I am your personal movie assistant, call me Popcorn. What is your favorite genre or movie?</li>
+                <li>Hey, movie lover I’m Popcorn, here to butter up your evenings with some blockbuster suggestions. So what movie or genre do you like?</li>
+            </random>
+            <think>
+                <set name="topic">genre</set>
+                <set name="currentTopic">genre</set>
+            </think>
+        </template>
+    </category>
+
+    <!-- Similar Greetings -->
+    <category>
+        <pattern>HI ^</pattern>
+        <template><srai>HELLO</srai></template>
+    </category>
+    
+    <category>
+        <pattern>HALLO ^</pattern>
+        <template><srai>HELLO</srai></template>
+    </category>
+
+    <category>
+        <pattern>HEY ^</pattern>
+        <template><srai>HELLO</srai></template>
+    </category>
+
+    <category>
+        <pattern>GOOD MORNING ^</pattern>
+        <template><srai>HELLO</srai></template>
+    </category>
+
+    <category>
+        <pattern>GOOD EVENING ^</pattern>
+        <template><srai>HELLO</srai></template>
+    </category>
+
+    <category>
+        <pattern>WHAT'S UP ^</pattern>
+        <template><srai>HELLO</srai></template>
+    </category>
+
+    <category>
+        <pattern>GREETINGS ^</pattern>
+        <template><srai>HELLO</srai></template>
+    </category>
+    
+    
+    <!-- Greetings -->
+    <category>
+        <pattern>^ BYE ^</pattern>
+        <delay>1</delay>
+        <template>
+            <random>
+                <li>Goodbye. Hope to hear from you again.</li>
+                <li>Bye Bye. See you soon.</li>
+                <li>Bye. for now.</li>
+            </random>
+            <think>
+                <set name="topic">*</set>
+                <set name="currentTopic">unknown</set>
+            </think>
+        </template>
+    </category>
+
+    <!-- Similar Greetings -->
+    <category>
+        <pattern>^ LATER ^</pattern>
+        <template><srai>BYE</srai></template>
+    </category>
+    
+    <category>
+        <pattern>GOODBYE</pattern>
+        <template><srai>BYE</srai></template>
+    </category>
+    
+    <category>
+        <pattern>FAREWELL</pattern>
+        <template><srai>BYE</srai></template>
+    </category>
+    
+    <category>
+        <pattern>ADIOS</pattern>
+        <template><srai>BYE</srai></template>
+    </category>
+    
+    <category>
+        <pattern>SEE YOU ^</pattern>
+        <template><srai>BYE</srai></template>
+    </category>
+
+    
+</aiml>

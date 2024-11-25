@@ -1,0 +1,381 @@
+<aiml version="2.0">
+    
+    <category>
+        <pattern>^ RANDOM ^</pattern>
+        <template>
+            <think>
+                <set name="topic">random</set>
+                <set name="currentTopic">random</set>
+            </think>
+            <srai>YES</srai>
+        </template>
+    </category>
+
+    <topic name="random">
+    <category>
+        <pattern>SUPER SECRET RANDOM PATTERN <set>movies</set></pattern>
+        <template>
+            <delay>1</delay>
+            <random>
+                <li>
+                    Here I have a great movie for you.<br/>
+                    This is a <map name="movie2genre"><star/></map> movie.<br/>
+                    It's lead actor is <map name="movie2actor"><star/></map>.<br/>
+                    The title is: "<star/>".<br/>
+                </li>
+                <li>
+                    Here I have a nice movie for you.<br/>
+                    The title of this movie is: "<star/>".<br/>
+                    The main actor is <map name="movie2actor"><star/></map>.<br/>
+                    This movie fits the <map name="movie2genre"><star/></map> genre the best.<br/>
+                </li>
+                <li>
+                    I’ve got an amazing movie suggestion for you!<br/>
+                    It’s a <map name="movie2genre"><star/></map> film.<br/>
+                    Starring the talented <map name="movie2actor"><star/></map>.<br/>
+                    The movie is titled: "<star/>".<br/>
+                </li>
+                <li>
+                    Check out this movie recommendation!<br/>
+                    The movie is called: "<star/>".<br/>
+                    It's a fantastic <map name="movie2genre"><star/></map> film.<br/>
+                    The leading role is played by <map name="movie2actor"><star/></map>.<br/>
+                </li>
+                <li>
+                    Here’s a must-watch movie for you!<br/>
+                    It’s titled "<star/>".<br/>
+                    A <map name="movie2genre"><star/></map> masterpiece.<br/>
+                    Featuring the incredible talent of <map name="movie2actor"><star/></map>.<br/>
+                </li>
+            </random>
+            Would You like another random recommendation?
+        </template>
+    </category>
+    
+    <category>
+        <pattern>^ <set>yes</set> ^</pattern>
+        <template>
+            <delay>1</delay>
+            <random>
+                <li><srai>SUPER SECRET RANDOM PATTERN THE LORD OF THE RINGS: THE FELLOWSHIP OF THE RING</srai></li>
+                <li><srai>SUPER SECRET RANDOM PATTERN PIRATES OF THE CARIBBEAN: THE CURSE OF THE BLACK PEARL</srai></li>
+                <li><srai>SUPER SECRET RANDOM PATTERN STAR WARS: EPISODE IV A NEW HOPE</srai></li>
+                <li><srai>SUPER SECRET RANDOM PATTERN FANTASTIC BEASTS AND WHERE TO FIND THEM</srai></li>
+                <li><srai>SUPER SECRET RANDOM PATTERN ONCE UPON A TIME IN HOLLYWOOD</srai></li>
+                <li><srai>SUPER SECRET RANDOM PATTERN HARRY POTTER AND THE SORCERER S STONE</srai></li>
+                <li><srai>SUPER SECRET RANDOM PATTERN THE SILENCE OF THE LAMBS</srai></li>
+                <li><srai>SUPER SECRET RANDOM PATTERN THE WOLF OF WALL STREET</srai></li>
+                <li><srai>SUPER SECRET RANDOM PATTERN THE FAULT IN OUR STARS</srai></li>
+                <li><srai>SUPER SECRET RANDOM PATTERN HOW TO TRAIN YOUR DRAGON</srai></li>
+                <li><srai>SUPER SECRET RANDOM PATTERN THE SECRET LIFE OF PETS</srai></li>
+                <li><srai>SUPER SECRET RANDOM PATTERN NO COUNTRY FOR OLD MEN</srai></li>
+                <li><srai>SUPER SECRET RANDOM PATTERN THE POWER OF THE DOG</srai></li>
+                <li><srai>SUPER SECRET RANDOM PATTERN THE GRAND BUDAPEST HOTEL</srai></li>
+                <li><srai>SUPER SECRET RANDOM PATTERN GUARDIANS OF THE GALAXY</srai></li>
+                <li><srai>SUPER SECRET RANDOM PATTERN MAD MAX: FURY ROAD</srai></li>
+                <li><srai>SUPER SECRET RANDOM PATTERN BACK TO THE FUTURE</srai></li>
+                <li><srai>SUPER SECRET RANDOM PATTERN THE PURSUIT OF HAPPYNESS</srai></li>
+                <li><srai>SUPER SECRET RANDOM PATTERN A STAR IS BORN</srai></li>
+                <li><srai>SUPER SECRET RANDOM PATTERN THE SHAPE OF WATER</srai></li>
+                <li><srai>SUPER SECRET RANDOM PATTERN THE CHRONICLES OF NARNIA</srai></li>
+                <li><srai>SUPER SECRET RANDOM PATTERN E T  THE EXTRA TERRESTRIAL</srai></li>
+                <li><srai>SUPER SECRET RANDOM PATTERN THE SHAWSHANK REDEMPTION</srai></li>
+                <li><srai>SUPER SECRET RANDOM PATTERN THE DARK KNIGHT</srai></li>
+                <li><srai>SUPER SECRET RANDOM PATTERN THE LION KING</srai></li>
+                <li><srai>SUPER SECRET RANDOM PATTERN SAVING PRIVATE RYAN</srai></li>
+                <li><srai>SUPER SECRET RANDOM PATTERN THE SOCIAL NETWORK</srai></li>
+                <li><srai>SUPER SECRET RANDOM PATTERN LA LA LAND</srai></li>
+                <li><srai>SUPER SECRET RANDOM PATTERN THE BIG LEBOWSKI</srai></li>
+                <li><srai>SUPER SECRET RANDOM PATTERN A QUIET PLACE</srai></li>
+                <li><srai>SUPER SECRET RANDOM PATTERN THE BREAKFAST CLUB</srai></li>
+                <li><srai>SUPER SECRET RANDOM PATTERN THE TRUMAN SHOW</srai></li>
+                <li><srai>SUPER SECRET RANDOM PATTERN PRIDE AND PREJUDICE</srai></li>
+                <li><srai>SUPER SECRET RANDOM PATTERN THE FIFTH ELEMENT</srai></li>
+                <li><srai>SUPER SECRET RANDOM PATTERN THE LEGO MOVIE</srai></li>
+                <li><srai>SUPER SECRET RANDOM PATTERN KUNG FU PANDA</srai></li>
+                <li><srai>SUPER SECRET RANDOM PATTERN THE JUNGLE BOOK</srai></li>
+                <li><srai>SUPER SECRET RANDOM PATTERN THE HUNGER GAMES</srai></li>
+                <li><srai>SUPER SECRET RANDOM PATTERN THE MAZE RUNNER</srai></li>
+                <li><srai>SUPER SECRET RANDOM PATTERN ALICE IN WONDERLAND</srai></li>
+                <li><srai>SUPER SECRET RANDOM PATTERN THE HATEFUL EIGHT</srai></li>
+                <li><srai>SUPER SECRET RANDOM PATTERN THE GODFATHER</srai></li>
+                <li><srai>SUPER SECRET RANDOM PATTERN FORREST GUMP</srai></li>
+                <li><srai>SUPER SECRET RANDOM PATTERN PULP FICTION</srai></li>
+                <li><srai>SUPER SECRET RANDOM PATTERN THE MATRIX</srai></li>
+                <li><srai>SUPER SECRET RANDOM PATTERN SCHINDLER S LIST</srai></li>
+                <li><srai>SUPER SECRET RANDOM PATTERN JURASSIC PARK</srai></li>
+                <li><srai>SUPER SECRET RANDOM PATTERN AVENGERS: ENDGAME</srai></li>
+                <li><srai>SUPER SECRET RANDOM PATTERN SPIRITED AWAY</srai></li>
+                <li><srai>SUPER SECRET RANDOM PATTERN FINDING NEMO</srai></li>
+                <li><srai>SUPER SECRET RANDOM PATTERN TOY STORY</srai></li>
+                <li><srai>SUPER SECRET RANDOM PATTERN BLACK PANTHER</srai></li>
+                <li><srai>SUPER SECRET RANDOM PATTERN GET OUT</srai></li>
+                <li><srai>SUPER SECRET RANDOM PATTERN DJANGO UNCHAINED</srai></li>
+                <li><srai>SUPER SECRET RANDOM PATTERN THE AVENGERS</srai></li>
+                <li><srai>SUPER SECRET RANDOM PATTERN SHUTTER ISLAND</srai></li>
+                <li><srai>SUPER SECRET RANDOM PATTERN THE DEPARTED</srai></li>
+                <li><srai>SUPER SECRET RANDOM PATTERN THE PRESTIGE</srai></li>
+                <li><srai>SUPER SECRET RANDOM PATTERN THE CONJURING</srai></li>
+                <li><srai>SUPER SECRET RANDOM PATTERN THE EXORCIST</srai></li>
+                <li><srai>SUPER SECRET RANDOM PATTERN CAST AWAY</srai></li>
+                <li><srai>SUPER SECRET RANDOM PATTERN THE NOTEBOOK</srai></li>
+                <li><srai>SUPER SECRET RANDOM PATTERN PRETTY WOMAN</srai></li>
+                <li><srai>SUPER SECRET RANDOM PATTERN MAMMA MIA!</srai></li>
+                <li><srai>SUPER SECRET RANDOM PATTERN BOHEMIAN RHAPSODY</srai></li>
+                <li><srai>SUPER SECRET RANDOM PATTERN SLUMDOG MILLIONAIRE</srai></li>
+                <li><srai>SUPER SECRET RANDOM PATTERN PAN S LABYRINTH</srai></li>
+                <li><srai>SUPER SECRET RANDOM PATTERN BLADE RUNNER</srai></li>
+                <li><srai>SUPER SECRET RANDOM PATTERN THE INCREDIBLES</srai></li>
+                <li><srai>SUPER SECRET RANDOM PATTERN ICE AGE</srai></li>
+                <li><srai>SUPER SECRET RANDOM PATTERN THE REVENANT</srai></li>
+                <li><srai>SUPER SECRET RANDOM PATTERN AMERICAN PSYCHO</srai></li>
+                <li><srai>SUPER SECRET RANDOM PATTERN FIGHT CLUB</srai></li>
+                <li><srai>SUPER SECRET RANDOM PATTERN GONE GIRL</srai></li>
+                <li><srai>SUPER SECRET RANDOM PATTERN THE IRISHMAN</srai></li>
+                <li><srai>SUPER SECRET RANDOM PATTERN INCEPTION</srai></li>
+                <li><srai>SUPER SECRET RANDOM PATTERN TITANIC</srai></li>
+                <li><srai>SUPER SECRET RANDOM PATTERN GOODFELLAS</srai></li>
+                <li><srai>SUPER SECRET RANDOM PATTERN INTERSTELLAR</srai></li>
+                <li><srai>SUPER SECRET RANDOM PATTERN PARASITE</srai></li>
+                <li><srai>SUPER SECRET RANDOM PATTERN WHIPLASH</srai></li>
+                <li><srai>SUPER SECRET RANDOM PATTERN FROZEN</srai></li>
+                <li><srai>SUPER SECRET RANDOM PATTERN COCO</srai></li>
+                <li><srai>SUPER SECRET RANDOM PATTERN JAWS</srai></li>
+                <li><srai>SUPER SECRET RANDOM PATTERN IT</srai></li>
+                <li><srai>SUPER SECRET RANDOM PATTERN HEREDITARY</srai></li>
+                <li><srai>SUPER SECRET RANDOM PATTERN GLADIATOR</srai></li>
+                <li><srai>SUPER SECRET RANDOM PATTERN BRAVEHEART</srai></li>
+                <li><srai>SUPER SECRET RANDOM PATTERN 300</srai></li>
+                <li><srai>SUPER SECRET RANDOM PATTERN ROCKY</srai></li>
+                <li><srai>SUPER SECRET RANDOM PATTERN ROCKETMAN</srai></li>
+                <li><srai>SUPER SECRET RANDOM PATTERN AMÉLIE</srai></li>
+                <li><srai>SUPER SECRET RANDOM PATTERN LOGAN</srai></li>
+                <li><srai>SUPER SECRET RANDOM PATTERN UP</srai></li>
+                <li><srai>SUPER SECRET RANDOM PATTERN RATATOUILLE</srai></li>
+                <li><srai>SUPER SECRET RANDOM PATTERN ZOOTOPIA</srai></li>
+                <li><srai>SUPER SECRET RANDOM PATTERN MOANA</srai></li>
+                <li><srai>SUPER SECRET RANDOM PATTERN SHREK</srai></li>
+                <li><srai>SUPER SECRET RANDOM PATTERN SING</srai></li>
+                <li><srai>SUPER SECRET RANDOM PATTERN TWILIGHT</srai></li>
+                <li><srai>SUPER SECRET RANDOM PATTERN DIVERGENT</srai></li>
+                <li><srai>SUPER SECRET RANDOM PATTERN MALEFICENT</srai></li>
+                <li><srai>SUPER SECRET RANDOM PATTERN FARGO</srai></li>
+                <li><srai>SUPER SECRET RANDOM PATTERN SEVEN</srai></li>
+                <li><srai>SUPER SECRET RANDOM PATTERN ZODIAC</srai></li>
+                <li><srai>SUPER SECRET RANDOM PATTERN PRISONERS</srai></li>
+                <li><srai>SUPER SECRET RANDOM PATTERN ARRIVAL</srai></li>
+                <li><srai>SUPER SECRET RANDOM PATTERN GRAVITY</srai></li>
+                <li><srai>SUPER SECRET RANDOM PATTERN BIRDMAN</srai></li>
+                <li><srai>SUPER SECRET RANDOM PATTERN ROMA</srai></li>
+                <li><srai>SUPER SECRET RANDOM PATTERN DUNE</srai></li>
+            </random>
+        </template>
+    </category>
+    
+    <category>
+        <pattern>^ SURE ^</pattern>
+        <template>
+            <srai>YES</srai>
+        </template>
+    </category>
+    
+    <category>
+        <pattern>^ MAYBE ^</pattern>
+        <template>
+            <srai>YES</srai>
+        </template>
+    </category>
+    
+    <category>
+        <pattern>^ <set>no</set> ^</pattern>
+        <template>
+            <delay>1</delay>
+            <think>
+                <set name="topic">fact</set>
+                <set name="currentTopic">fact</set>
+            </think>
+            <random>
+                <li>Can I perhaps intest you in movie facts?</li>
+                <li>May I interest you in some movie facts?</li>
+            </random>
+        </template>
+    </category>
+    </topic>
+
+
+    <!-- Trivia -->
+    <category>
+        <pattern>^ FACT ^</pattern>
+        <template>
+            <think>
+                <set name="topic">fact</set>
+                <set name="currentTopic">fact</set>
+            </think>
+            <srai>YES</srai>
+        </template>
+    </category>
+    
+    <topic name="fact">
+    <category>
+        <pattern>^ <set>yes</set> ^</pattern>
+        <template>
+            <delay>1</delay>
+            <random>
+                <li>Sure, here is a random fact.</li>
+                <li>Of course! Hope you enjoy this one.</li>
+                <li>Absolutely, here’s an interesting fact for you.</li>
+                <li>Here you go! A fun fact to brighten your day.</li>
+                <li>Sure thing! Check out this fascinating fact.</li>
+            </random><br/>
+            <random>
+                <li>Gene Wilder agreed to play Willy Wonka on the condition that he enter with a cane, followed by a surprise somersault. That way, no one would know if he was lying or telling the truth for the rest of the film.</li>
+                <li>“Showgirls” director Paul Verhoeven was the first “winner” to accept his Razzie in person.</li>
+                <li>Disney turned down “Back to the Future” due to the uncomfortable dynamic between Marty and his mother.</li>
+                <li>A 14-year-old Laurence Fishburne lied about his age to play a 17-year-old in “Apocalypse Now.”</li>
+                <li>“12 Angry Men” was shot in only 21 days.</li>
+                <li>The “Vertigo” opening credits utilized a WWII mechanical computer initially used for anti-aircraft targeting, marking an early use of computer graphics in film.</li>
+                <li>Hayao Miyazaki once pulled a bicycle out of a river near his home, inspiring a scene from “Spirited Away.”</li>
+                <li>Actor Jack Nance nicknamed the “Eraserhead” baby “Spike.”</li>
+                <li>Chevy Chase turned down the role of Lester Burnham in “American Beauty,” which won Kevin Spacey an Oscar.</li>
+                <li>Tony Stark’s “I am Iron Man” callback in “Avengers: Endgame” was a last-minute idea from editor Jeff Ford.</li>
+                <li>Before becoming an acting icon, Michael Douglas produced “One Flew Over the Cuckoo’s Nest,” acquiring the rights from his father, Kirk.</li>
+                <li>Steven Spielberg wanted an unknown for “Saving Private Ryan,” casting Matt Damon without foreseeing the success of “Good Will Hunting.”</li>
+                <li>The “Super Mario Bros.” movie was such a production nightmare that Bob Hoskins and John Leguizamo drank before shoots and between takes.</li>
+                <li>Bob Hoskins had to be animated for certain shots while driving Benny the Cab in “Who Framed Roger Rabbit.”</li>
+                <li>When Dustin Hoffman auditioned for “The Graduate,” he was mistaken for a window cleaner. So, he washed the window.</li>
+                <li>Angela Lansbury wasn’t sure if she could pull off the titular song from “Beauty and the Beast,” but she did it in one take.</li>
+                <li>While Randy Kerber’s piano performances were recorded for “La La Land,” Ryan Gosling learned how to play the instrument for the film, not requiring any CGI or hand doubles.</li>
+                <li>Luke Skywalker’s last name was meant to be ‘Starkiller’, but George Lucas felt that it had “unpleasant connotations” with criminal cult leader Charles Manson.</li>
+                <li>Director Stanley Kubrick showed his cut of “Eyes Wide Shut” to Tom Cruise, Nicole Kidman, and Warner Bros. just six days before he died.</li>
+                <li>Humphrey Bogart provided his own wardrobe for “The Maltese Falcon.”</li>
+                <li>Screenwriter Diablo Cody included the hamburger phone in “Juno” because she had an identical one growing up.</li>
+                <li>Director Rob Reiner shot an alternate ending for “The Princess Bride” in which the grandson looks out the window to see the four heroes suspended in the air on white horses. Andre the Giant had to be lowered down onto his horse with cables.</li>
+                <li>Florence Stoker, Bram Stoker’s widow, wouldn’t give Prana Film the rights to “Dracula,” resulting in the unofficial adaptation of “Nosferatu” and a lawsuit.</li>
+                <li>The initial screenplay for “Chinatown” gave Jake Gittes narration, which director Roman Polanski decided to cut.</li>
+                <li>Tommy Wiseau insisted on showing his rear end in “The Room,” believing the movie wouldn’t sell otherwise.</li>
+                <li>For Kermit’s early swamp scene in “The Muppet Movie,” Jim Henson had to spend a day in a 50-gallon steel drum under a pond.</li>
+                <li>In the film “Paper Moon”, the cigarettes smoked by Tatum O’Neal, who turned 9 during filming, were filled with lettuce. She had sandpaper glued to her fingers to light the match with one hand.</li>
+                <li>When the mic was unplugged at the rally, Forrest Gump said, “Sometimes when people go to Vietnam, they go home to their mommas without any legs. Sometimes they don’t go home at all. That’s a bad thing.”</li>
+                <li>Gene Kelly had a 103 °F fever while filming his signature song from “Singin’ in the Rain.”</li>
+                <li>To get Jack Nicholson into a disgruntled mood for “The Shining,” director Stanley Kubrick fed him cheese sandwiches (which he can’t stand) for two weeks.</li>
+                <li>Charmian Carr was 21, rather than 16, when she played Liesl in “The Sound of Music,” making her just 14 years younger than on-screen father Christopher Plummer, whom she had a crush on.</li>
+                <li>Michael Caine was so stunned by Heath Ledger in “The Dark Knight” that he forgot his lines during rehearsal.</li>
+                <li>The “Monty Python and the Holy Grail” crew couldn’t afford real horses, using coconuts instead.</li>
+                <li>Despite winning for its screenplay, “Citizen Kane” was booed at the Academy Awards, having drawn inspiration from media giant William Randolph Hearst, who launched a smear campaign against the film.</li>
+                <li>1990’s “Teenage Mutant Ninja Turtles” was the highest-grossing indie movie until “The Blair Witch Project.”</li>
+                <li>Marilyn Monroe's contract required that her films be in color, but she made an exception for “Some Like It Hot” after seeing Jack Lemmon and Tony Curtis’ makeup.</li>
+                <li>Universal sued Nintendo, believing “Donkey Kong” infringed on “King Kong,” but attorney John Kirby successfully argued the plot and characters were in the public domain.</li>
+                <li>In “Terminator 2,” Linda Hamilton’s twin sister Leslie played the T-1000 impersonating Sarah Connor.</li>
+                <li>Hollywood was so convinced that “Snow White and the Seven Dwarfs” would flop that they deemed it “Disney’s Folly” before it broke records.</li>
+                <li>Firing Disney executive David Vogel after he paid $3 million for “The Sixth Sense,” Disney sold its production rights to Spyglass, only holding onto the distribution rights and 12.5% of its box office.</li>
+                <li>While watching an animatic for “Jurassic Park,” director Steven Spielberg remarked to stop-motion artist Phil Tippett that he was “out of a job”, to which he replied “Don’t you mean extinct?” It became dialogue in the film.</li>
+                <li>Pre-Fame Ben Affleck and Matt Damon were extras at Fenway Park in “Field of Dreams.”</li>
+                <li>The apartment becomes smaller as “A Streetcar Named Desire” progresses, symbolizing the walls of sanity closing in on Blanche.</li>
+                <li>In Peter Jackson’s “The Lord of the Rings” trilogy, John Rhys-Davies, who played Gimli, also voiced Treebeard.</li>
+                <li>After Alan Rickman was cast in “Harry Potter and the Philosopher’s Stone,” J.K. Rowling revealed to him how Severus Snape’s story ended.</li>
+                <li>Tom Selleck’s commitment to “Magnum P.I.” cost him the chance to play Indiana Jones in “Raiders of the Lost Ark,” although the 1980 actors strike would’ve allowed him to do the film.</li>
+                <li>A cut subplot from “The Goonies” involved two gorillas escaping from the zoo and taking Troy’s car for a joy ride.</li>
+                <li>Francis Ford Coppola compelled George Lucas to make something lighthearted and commercial, leading to “American Graffiti.”</li>
+                <li>John Hughes wrote the original draft for “Dumb and Dumber,” which he sold to the Farrelly brothers.</li>
+                <li>Developing backstories for their “Fargo” characters, Frances McDormand and John Carroll Lynch decided that Marge and Norm were both once on the force. When they got married, Norm quit, believing Marge was the better cop.</li>
+                <li>To create tensions between the Sharks and Jets while filming “West Side Story,” the actors were kept apart and encouraged to prank each other.</li>
+                <li>Sigourney Weaver made her film debut in “Annie Hall.”</li>
+                <li>Since Robert De Niro thought fake money wasn’t authentic enough, the “Goodfellas” prop master loaned him $5,000 out of his own pocket to use during takes.</li>
+                <li>“The Misfits” was the last film that Marilyn Monroe and Clark Gable finished before their deaths.</li>
+                <li>“Psycho” features the first flushing of a toilet in a mainstream movie.</li>
+                <li>To create a family dynamic, “The Godfather” cast had a dinner in character.</li>
+                <li>The tarantula placed on Daniel Stern’s face in “Home Alone” was real and named Barry.</li>
+                <li>Leonardo DiCaprio turned down the role of Max in “Hocus Pocus,” instead starring in “What’s Eating Gilbert Grape”, for which he was nominated for an Academy Award.</li>
+                <li>One of the dancing extras in “Enchanted” also played a chimney sweep in “Mary Poppins”.</li>
+                <li>Director Sam Raimi originally wanted to call “Army of Darkness” “The Medieval Dead", but Universal Pictures wasn’t impressed.</li>
+                <li>To appear taller than Ingrid Bergman, Humphrey Bogart stood on blocks and sat on cushions in “Casablanca”.</li>
+                <li>At one point, Gene Hackman almost directed and starred as FBI agent Jack Crawford in “The Silence of the Lambs.”</li>
+                <li>Asbestos was used for the snow and witch’s fiery broomstick in “The Wizard of Oz.”</li>
+                <li>“Scream” was initially set to be titled “Scary Movie.”</li>
+                <li>Filmmaker Ivan Reitman suggested Bill Murray play Batman and Eddie Murphy play Robin in the 1989 blockbuster.</li>
+                <li>Dooley Wilson, who played pianist Sam in “Casablanca,” was actually a drummer.</li>
+                <li>In an early script for “E.T.,” Elliott had a best friend who would’ve been played by Corey Feldman.</li>
+                <li>An early draft for “Stars Wars” described Han Solo as “a huge, green skinned monster with no nose and large gills.”</li>
+                <li>WALL-E stands for Waste Allocation Load Lifter: Earth-Class.</li>
+                <li>Many Disney animators wanted to work on “Pocahontas” over “The Lion King,” at the time believing that the former film had more potential.</li>
+                <li>Choreographer Longinus Fernandes was accidentally left out of the credits for “Slumdog Millionaire”, so director Danny Boyle thanked him in his Oscar acceptance speech.</li>
+                <li>It’s been said that after Clark Gable showed his bare chest in “It Happened One Night,” undershirt sales went down.</li>
+                <li>Scenes were cut from “Ferris Bueller's Day Off” that would’ve featured the titular character’s younger brother and sister.</li>
+                <li>In “Freaks,” lovers Hans and Frieda were played by siblings Harry and Daisy Earles.</li>
+                <li>Brock Peters, who played Tom Robinson in “To Kill a Mockingbird,” delivered the eulogy at Gregory Peck’s funeral.</li>
+                <li>In “When Harry Met Sally…,” Billy Crystal came up with the iconic line said by Rob Reiner’s mother, Estelle.</li>
+                <li>Jim Carrey improvised the “Trumania” scene in “The Truman Show.”</li>
+                <li>“North by Northwest” has been described as the first Bond movie, predating “Dr. No” by three years.</li>
+                <li>Actor Doug Jones didn’t know Spanish when he agreed to be in “Pan’s Labyrinth.”</li>
+                <li>Radio Raheem’s “love/hate” monologue in “Do the Right Thing” pays homage to “The Night of the Hunter.”</li>
+                <li>Signing on for “In the Heat of the Night,” Sidney Poitier insisted that Tibbs slap back Endicott.</li>
+                <li>“Moon River” from “Breakfast at Tiffany’s” was written to accommodate Audrey Hepburn’s singing range.</li>
+                <li>Stanley Kubrick won his only Oscar for his effects contributions on “2001: A Space Odyssey.”</li>
+                <li>Chris Farley was originally set to voice Shrek, recording most of his dialogue before his death.</li>
+                <li>The wallet from “Pulp Fiction” belonged to Quentin Tarantino.</li>
+                <li>For 1978’s “Superman,” Christopher Reeve modeled his Clark Kent after Cary Grant in “Bringing Up Baby.”</li>
+                <li>When Warner Bros. wanted to change “Beetlejuice” to “House Ghosts,” Tim Burton jokingly suggested the title “Scared Sheetless” … and it was actually considered.</li>
+                <li>Actor John Payne wrote an unproduced sequel to “Miracle on 34th Street.”</li>
+                <li>The opening lullaby in “Rosemary’s Baby” was performed by Mia Farrow.</li>
+                <li>For “On Golden Pond,” Henry Fonda got his character’s “lucky hat” from Katharine Hepburn. The hat belonged to Hepburn’s late partner, Spencer Tracy.</li>
+                <li>Actor Warren Beatty received 40% of the earnings from “Bonnie and Clyde,” giving director Arthur Penn 10%.</li>
+                <li>Al Pacino’s “Attica” line in “Dog Day Afternoon” was ad-libbed.</li>
+                <li>Scorpio from “Dirty Harry” was loosely inspired by the Zodiac Killer.</li>
+                <li>Maurice LaMarche dubbed over Vincent D’Onofrio as Orson Welles in “Ed Wood.”</li>
+                <li>Eddie Murphy was offered a role in “Ghostbusters,” but he instead starred in “Beverly Hills Cop.”</li>
+                <li>“All the President’s Men” used actual trash from the Washington Post to authentically recreate the newsroom.</li>
+                <li>Mel Brooks reused machinery from the original “Frankenstein” films for “Young Frankenstein.”</li>
+                <li>After watching “Raging Bull,” the real Jake LaMotta asked his wife if he was really that bad. She said, “You were worse.”</li>
+                <li>1954’s “Godzilla” commenced what Guinness World Records considers the longest-running movie franchise.</li>
+                <li>The opening scene in “The Social Network” took 99 takes… huh, kind of a missed opportunity that wasn’t our 99th entry…</li>
+            </random><br/>
+            Would you like to get another fact?
+        </template>
+    </category>
+    
+    <category>
+        <pattern>^ SURE ^</pattern>
+        <template>
+            <srai>YES</srai>
+        </template>
+    </category>
+    
+    <category>
+        <pattern>^ MAYBE ^</pattern>
+        <template>
+            <srai>YES</srai>
+        </template>
+    </category>
+    
+    <category>
+        <pattern>^ <set>no</set> ^</pattern>
+        <template>
+            <think>
+                <set name="topic">*</set>
+                <set name="currentTopic">unknown</set>
+            </think>
+            <random>
+                <li>Unfortunatly I can not help you further from here.</li>
+                <li>Sorry, from here on out I can no longer help.</li>
+                <li>Regrettably, I can't provide further help beyond this point.</li>
+            </random><br/>
+            <random>
+                <li>However, You can always start a new discussion with me.</li>
+                <li>But... I will wait for you to return to me.</li>
+                <li>Nonetheless, feel free to begin a new conversation with me anytime.</li>
+            </random><br/>
+            <random>
+                <li>Just ask about any movie, actor or genre.</li>
+                <li>Just start a new conversation about any genre, actor or movie</li>
+                <li>You can always ask me anything about movies, genres, or actors.</li>
+            </random><br/>
+            <random>
+                <li>Goodbye</li>
+                <li>See you later, Aligator</li>
+                <li>Adios</li>
+            </random>
+        </template>
+    </category>
+    </topic>
+  
+</aiml>

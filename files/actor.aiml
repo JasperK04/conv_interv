@@ -1,0 +1,136 @@
+<aiml version="2.0">
+	
+    <!-- Actor-based Recommendation -->
+    <category>
+        <pattern>^ <set>actors</set> ^</pattern>
+        <template>
+            <think>
+                <set name="actor"><star index='2'/></set>
+                <set name="topic">actor</set>
+                <set name="currentTopic">actor</set>
+                <set name="temp"><map name="actor2movie"><get name="actor"/></map></set>
+            </think>
+            <delay>1</delay>
+            <random>
+                <li>
+                    Ah, Their a good actor.<br/>
+                    Here is a movie with <get name="actor"/> I recommend:<br/>
+                    <set name="temp"><map name="actor2movie"><get name="actor"/></map></set>,<br/>
+                    <think><set name="temp"><map name="movie2genre"><get name="temp"/></map></set></think>
+                    <condition name="temp">
+                        <li value="unknown">I don't seem to recall what genre of movie it is unfortunately.</li>
+                        <li>This movie is a <get name="temp"/> movie.</li>
+                    </condition>
+                </li>
+                <li>
+                    Great choice, <get name="actor"/> is a great actor.<br/>
+                    I believe them to be the lead actor in: <set name="temp">
+                        <map name="actor2movie"><get name="actor"/></map>
+                    </set>,<br/>
+                    <think><set name="temp"><map name="movie2genre"><get name="temp"/></map></set></think>
+                    <condition name="temp">
+                        <li value="unknown">But I don't recall in what genre this movie should fall in.</li>
+                        <li>I think this movie is of the genre: <get name="temp"/>.</li>
+                    </condition>
+                </li>
+                <li>
+                    Excellent choice, <get name="actor"/> is truly a fantastic actor.<br/>
+                    I think they star as the lead in: <set name="temp">
+                        <map name="actor2movie"><get name="actor"/></map>
+                    </set>,<br/>
+                    <think><set name="temp"><map name="movie2genre"><get name="temp"/></map></set></think>
+                    <condition name="temp">
+                        <li value="unknown">However, I can’t recall what genre this movie belongs to.</li>
+                        <li>I believe this movie fits into the genre of: <get name="temp"/>.</li>
+                    </condition>
+                </li>
+                <li>
+                    They're a great actor indeed.<br/>
+                    Here's a movie featuring <get name="actor"/> that I recommend:<br/>
+                    <set name="temp"><map name="actor2movie"><get name="actor"/></map></set>,<br/>
+                    <think><set name="temp"><map name="movie2genre"><get name="temp"/></map></set></think>
+                    <condition name="temp">
+                        <li value="unknown">Unfortunately, I can't recall what genre this movie falls under.</li>
+                        <li>This movie is a <get name="temp"/> film.</li>
+                    </condition>
+                </li>
+            </random><br/>
+            Would you like a suggestion for a different actor?
+        </template>
+    </category>
+    
+    <category>
+        <pattern>^ ACTOR ^</pattern>
+        <delay>1</delay>
+        <template>
+            <think>
+                <set name="topic">actor</set>
+                <set name="currentTopic">actor</set>
+            </think>
+            What actor are you thinking about?
+        </template>
+    </category>
+    
+    
+    <topic name="actor">
+    <category>
+        <pattern>^ DO NOT HAVE *</pattern>
+        <delay>1</delay>
+        <template>
+            <random>
+                <li>I'm sorry to hear that. Would you like me to give a random recommendation instead?</li>
+                <li>Sorry, that didn't help either. Can I recommend a random movie instead then?</li>
+                <li>That is unfortunate. Can I make a random recommendation for you instead?</li>
+            </random>
+            <think>
+                <set name="topic">random</set>
+                <set name="currentTopic">random</set>
+            </think>
+        </template>
+    </category>
+    
+    <category>
+        <pattern>^ NONE ^</pattern>
+        <template>
+            <srai>I DO NOT HAVE ANY</srai>
+        </template>
+    </category>
+    
+    <category>
+        <pattern>^ <set>no</set> ^</pattern>
+        <that>WOULD YOU LIKE A SUGGESTION FOR A DIFFERENT ACTOR</that>
+        <template>
+            <delay>1</delay>
+            <random>
+                <li>Oke. Would you like me to give a random recommendation?</li>
+                <li>Understood. Can I recommend a random movie instead then?</li>
+                <li>Oke. Can I make a random recommendation for you instead?</li>
+            </random>
+            <think>
+                <set name="topic">random</set>
+                <set name="currentTopic">random</set>
+            </think>
+        </template>
+    </category>
+    
+    <category>
+        <pattern>^ <set>no</set> ^</pattern>
+        <template>
+            <srai>I DO NOT HAVE ANY</srai>
+        </template>
+    </category>
+    
+    <category>
+        <pattern>^ <set>yes</set> ^</pattern>
+        <template>
+            <delay>1</delay>
+            <random>
+                <li>Great. What actor did you have in mind?</li>
+                <li>Fantastic. Who do you have in mind?</li>
+            </random> 
+        </template>
+    </category>
+
+    </topic>
+    
+</aiml>
