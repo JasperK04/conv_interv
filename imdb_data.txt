@@ -1,0 +1,11 @@
+add new data here:
+format:
+
+picture alt
+nr. name
+occupation1
+occupation2
+...
+movie (year)
+
+as copy/paste from imdb advanced search for actors
